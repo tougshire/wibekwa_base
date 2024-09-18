@@ -2,16 +2,40 @@
 {% load static %}
 {% load wagtailcore_tags wagtailimages_tags %}
 
+{% block top %}
+{{ block.super }}
+{% endblock %}
 {% block extra_css %}
-<link rel="stylesheet" type="text/css" href="{% static 'wibekwa/wibekwa.css' %}">
+{{ block.super }}
+{% endblock %}
+{% block endhead %}
+{{ block.super }}
 {% endblock %}
 
 {% block content %}
+  {% if top_page_group.pages %}
+    <div class="toppagegroup">
+      <div class="pagegroup">
+        <div class="pageset">
+          {% if show_tag_titles %}<h2>{{ top_page_group.title }}</h2>{% endif %}
+          <div class="pages">
+            {% for page in top_page_group.pages %}
+              <p>
+                  <strong><a href="{% pageurl page %}">{{ page.title }}</a></strong><br />
+                  <small>Revised: {{ page.latest_revision_created_at }}</small><br />
+              </p><br />
+              <p>{{ page.summary }}</p><br />
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
   <div class="pagegroups">
     {% for page_group in page_groups %}
       <div class="pagegroup">
         {% for page_set in page_group.page_sets %}
-          <div class="page_set">
+          <div class="pageset">
             {% if show_tag_titles %}<h2>{{ page_set.title }}</h2>{% endif %}
             <div class="pages">
               {% for page in page_set.pages %}
