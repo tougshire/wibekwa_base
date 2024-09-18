@@ -1,5 +1,5 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
-<div class="articletitle"><a href="{% pageurl page %}">{{ page.title }}</a></div>
+<div class="articletitle"><a href="{% pageurl page %}">{{ article_page.title }}</a></div>
 <div class="articlemeta">Revised: {{ page.latest_revision_created_at }}</div>
-<div class="articlesummary">{{ page.summary }}</div>
+<div class="articlesummary">{{ article_page.summary }}</div>

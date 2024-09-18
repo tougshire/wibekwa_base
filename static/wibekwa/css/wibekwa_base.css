@@ -971,7 +971,7 @@ each detail view
   }
 
   /* ---- Blog Index Page ---- */
-  .blog-tags {
+  .article-tags {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
@@ -981,7 +981,7 @@ each detail view
     margin-bottom: 70px;
   }
 
-  .blog-tags.blog-tags--condensed {
+  .article-tags.blog-tags--condensed {
     column-gap: 0;
   }
 

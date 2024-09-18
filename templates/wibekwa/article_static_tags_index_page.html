@@ -13,13 +13,13 @@
 {% endblock %}
 
 {% block content %}
-  {% if top_page_group.pages %}
+  {% if top_article_page_group.article_pages %}
     <div class="toparticlegroup">
       <div class="articlegroup">
-        <div class="pageset">
-          {% if show_tag_titles %}<h2>{{ top_page_group.title }}</h2>{% endif %}
-          <div class="pages">
-            {% for page in top_page_group.pages %}
+        <div class="articleset">
+          {% if show_tag_titles %}<h2>{{ top_article_group.title }}</h2>{% endif %}
+          <div class="articles">
+            {% for article_page in top_article_page_group.article_pages %}
               {% include "wibekwa/includes/article.html" %}
             {% endfor %}
           </div>
@@ -28,13 +28,13 @@
     </div>
   {% endif %}
   <div class="articlegroups">
-    {% for page_group in page_groups %}
+    {% for article_group in article_groups %}
       <div class="articlegroup">
-        {% for page_set in page_group.page_sets %}
-          <div class="pageset">
-            {% if show_tag_titles %}<h2>{{ page_set.title }}</h2>{% endif %}
-            <div class="pages">
-              {% for page in page_set.pages %}
+        {% for article_set in article_group.article_sets %}
+          <div class="articleset">
+            {% if show_tag_titles %}<h2>{{ article_set.title }}</h2>{% endif %}
+            <div class="articles">
+              {% for article in article_set.articles %}
                 {% include "wibekwa/includes/article.html" %}
             {% endfor %}
             </div>
