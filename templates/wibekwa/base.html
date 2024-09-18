@@ -37,12 +37,12 @@
         {% wagtailuserbar %}
 
         {% block header %}
-            {% include base_context_settings.wibekwa_base|add:"/includes/header.html" %}
+            {% include "wibekwa/includes/header.html" %}
         {% endblock header %}
 
         <main id="main-content">
           {% block messages %}
-              {% include base_context_settings.wibekwa_base|add:"/includes/messages.html" %}
+              {% include "wibekwa/includes/messages.html" %}
           {% endblock messages %}
 
           {% block content %}
@@ -50,7 +50,7 @@
       </main>
 
       {% block footer %}
-        {% include base_context_settings.wibekwa_base|add:"/includes/footer.html" %}
+        {% include "wibekwa/includes/footer.html" %}
       {% endblock footer %}
 
 

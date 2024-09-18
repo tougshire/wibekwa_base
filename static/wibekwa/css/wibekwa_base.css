@@ -43,6 +43,16 @@ each detail view
     /* stylelint-enable */
     --font-sm: 1rem;
     --font-md: 1.125rem;
+
+    --link-color: #224faa;
+    --link-hover-color: #2296aa;
+
+    --headline-link-color: #224faa;
+    --headline-link-hover-color: #2296aa;
+
+    --headline-font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+
+
   }
 
   html {
@@ -175,12 +185,12 @@ each detail view
   a,
   a:focus,
   a:visited {
-    color: var(--orange);
+    color: var(--link-color);
     text-decoration: none;
   }
 
   a:hover {
-    color: var(--dark-orange);
+    color: var(--link-hover-color);
     text-decoration: none;
   }
 
@@ -862,7 +872,7 @@ each detail view
   }
 
   .breadcrumb a:hover {
-    color: var(--dark-orange);
+    color: var(--headline-link-color);
   }
 
   /* Pagination navigation */
@@ -2098,14 +2108,15 @@ each detail view
 
 
 
-.pagegroup {
+.articlegroup {
     display:flex;
     justify-content:space-around
 }
-.toppagegroup {
+.toparticlegroup {
     text-align: center;
 }
 
-.pageset {
+.articleset {
     border:1px solid black;
 }
+
