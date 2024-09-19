@@ -20,7 +20,7 @@
           {% if show_tag_titles %}<h2>{{ top_article_group.title }}</h2>{% endif %}
           <div class="articles">
             {% for article_page in top_article_page_group.article_pages %}
-              {% include "wibekwa/includes/article.html" %}
+              {% include "wibekwa/includes/article_indexentry.html" with show_body="True" show_main_image="True" %}
             {% endfor %}
           </div>
         </div>
@@ -28,14 +28,14 @@
     </div>
   {% endif %}
   <div class="articlegroups">
-    {% for article_group in article_groups %}
+    {% for article_page_group in article_page_groups %}
       <div class="articlegroup">
-        {% for article_set in article_group.article_sets %}
+        {% for article_page_set in article_page_group.article_page_sets %}
           <div class="articleset">
-            {% if show_tag_titles %}<h2>{{ article_set.title }}</h2>{% endif %}
+            {% if show_tag_titles %}<h2>{{ article_page_set.title }}</h2>{% endif %}
             <div class="articles">
-              {% for article in article_set.articles %}
-                {% include "wibekwa/includes/article.html" %}
+              {% for article_page in article_page_set.article_pages %}
+                {% include "wibekwa/includes/article_indexentry.html" %}
             {% endfor %}
             </div>
           </div>
