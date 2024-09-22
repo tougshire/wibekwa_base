@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags %}
+{% load static wagtailcore_tags template_settings %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,6 +23,7 @@
         {% endif %}
 
 
+        {% get_template_settings as template_settings %}
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍩</text></svg>"/>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,8 +32,12 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/bnmng.css' %}">
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
+        <link rel="stylesheet" type="text/css" href="{% static 'wibekwa/css/wibekwa.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'wibekwa/css/'|add:template_settings.themecolor|add:'.css' %}">
+
         {% block extra_css %}
-          {% for stylesheet in base_context_settings.stylesheets %}
+
+        {% for stylesheet in base_context_settings.stylesheets %}
             <link rel="stylesheet" type="text/css" href="{% static stylesheet %}">
           {% endfor %}
         {% endblock %}
@@ -45,14 +50,23 @@
         {% block header %}
             {% include "wibekwa/includes/header.html" %}
         {% endblock header %}
+        {% block messages %}
+          {% include "wibekwa/includes/messages.html" %}
+        {% endblock messages %}
 
-        <main id="main">
-          {% block messages %}
-              {% include "wibekwa/includes/messages.html" %}
-          {% endblock messages %}
 
-          {% block content %}
-          {% endblock content %}
+        <main id="main" class="{% if template_settings.show_leftbar %}withleftsidebar {% endif %}">
+          {% if template_settings.show_leftbar %}
+            <div id="leftsidebar" class="sidebar">
+              {% block leftsidebar %}
+                {% include "wibekwa/includes/leftsidebar.html" %}
+              {% endblock %}
+            </div>
+          {% endif %}
+          <div id="content">
+            {% block content %}
+            {% endblock content %}
+          </div>
       </main>
 
       {% block footer %}

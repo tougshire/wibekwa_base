@@ -1,0 +1,13 @@
+:root {
+    --blue-theme-main-font-color: #333;
+    --theme-headline-font-color: #333;
+
+}
+.site-description {
+    color: var(--blue-theme-main-font-color);
+}
+
+.articletitle {
+    color: var(--theme-headline-font-color);
+
+}
