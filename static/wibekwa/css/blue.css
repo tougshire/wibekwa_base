@@ -1,23 +1,8 @@
 :root {
     --theme-main-font-color: #112855;
-    --theme-headline-font-color: #112855;
     --theme-dark-line-color: #032140;
-
+    --theme-headline-font-color: #112855;
+    --theme-special-headline-font-color: #09245b;
 }
 
-header {
-    border-bottom-color: var(--theme-dark-line-color);
-  }
-
-.site-description {
-    color: var(--theme-main-font-color);
-}
-
-.sidebar li.menuitem {
-    color: var(--theme-main-font-color);
-}
-.articletitle {
-    color: var(--theme-headline-font-color);
-
-}
 

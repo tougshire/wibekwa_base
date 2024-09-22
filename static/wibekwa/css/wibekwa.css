@@ -60,7 +60,7 @@ footer {
 }
 
 header {
-  border-bottom: .5em solid;
+  border-bottom: .5em solid var(--theme-dark-line-color);
 }
 
 .sidebar ul {
@@ -71,11 +71,13 @@ header {
     text-decoration: none;
     font-weight:600;
     font-size:1.4em;
+    color: var(--theme-main-font-color);
 }
 
 .site-description {
     font-family:"Roboto", sans-serif;
     font-weight: 600;
+    color: var(--theme-main-font-color);
 }
 .template-homepage  main {
   text-align: center;
@@ -95,6 +97,7 @@ header {
     font-weight: 500;
     font-style: normal;
     font-size: 2rem;
+    color: var(--theme-headline-font-color);
 }
 
 .articlegroup > div {
@@ -111,8 +114,11 @@ header {
     font-weight: 600;
     font-style: normal;
     font-size: 2.2rem;
+    color: var(--theme-special-headline-font-color);
 }
 
 .specarticlegroup > div {
     flex: 1 1 0;
 }
+
+

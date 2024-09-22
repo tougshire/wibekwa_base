@@ -1,21 +1,7 @@
 :root {
-    --theme-main-font-color: #600;
-    --theme-headline-font-color: #290101;
-    --theme-dark-line-color: #032140;
+    --theme-main-font-color: #660000;
+    --theme-dark-line-color: #400303;
+    --theme-headline-font-color: #861010;;
+    --theme-special-headline-font-color: #800202;;
 
-}
-header {
-    border-bottom-color: var(--theme-dark-line-color);
-}
-
-.sidebar li.menuitem {
-    color: var(--theme-main-font-color);
-}
-
-.articletitle {
-    color: var(--theme-headline-font-color);
-
-}
-.site-description {
-    color: var(--theme-main-font-color);
 }
