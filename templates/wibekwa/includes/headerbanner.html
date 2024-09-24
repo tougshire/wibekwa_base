@@ -1,9 +1,18 @@
+{% load wagtailimages_tags %}
+
+
 <div id="headerbanner">
+
   <div>
     <a class="brand-logo" href="/">
-      <img loading="eager" decoding="async" src="{{ base_context_settings.banner_image }}" alt="{{ base_context_settings.banner_text }}" width="{{ base_context_settings.banner_image_width }}" style="max-width:80%" >
+      {% if template_settings.show_banner_image %}
+        {% image template_settings.banner_image original as banner_image %}
+        <img loading="eager" decoding="async" src="{{ banner_image.url }}" alt="{{ template_settings.banner_text }}" {% if template_settings.banner_image_width > "" %} width="{{ template_settings.banner_image_width }}" {% else %} style="{{ template_settings.banner_image_style }}" {% endif %} >
+      {% else %}
+        <h1 class="banner">{{ template_settings.banner_text }}</h1>
+      {% endif %}
     </a>
-    <div class="site-description">{{ base_context_settings.site_description }}</div>
+    <div class="site-description">{{ template_settings.site_description }}</div>
   </div>
 </div>
 

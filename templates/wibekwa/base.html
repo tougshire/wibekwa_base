@@ -37,9 +37,6 @@
 
         {% block extra_css %}
 
-        {% for stylesheet in base_context_settings.stylesheets %}
-            <link rel="stylesheet" type="text/css" href="{% static stylesheet %}">
-          {% endfor %}
         {% endblock %}
         {% block head_js %}
         {% endblock %}

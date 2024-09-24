@@ -1,5 +1,7 @@
 {% load navigation_tags %}
-
 <footer>
-  {% get_footer_text %}
+  <div class="disclaimer">
+  {{ template_settings.footer_text.0 }}
+  </div>
+  <div><a href="{{ template_settings.footer_text.1 }}">{{ template_settings.footer_text.1 }}</a></div>
 </footer>

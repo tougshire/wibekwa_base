@@ -56,6 +56,16 @@ header {
   border-bottom: .5em solid var(--theme-dark-line-color);
 }
 
+h1.banner {
+    font-size:3em;
+    margin: 0 auto 0 auto;
+    color: var(--theme-main-font-color);
+
+}
+a.brand-logo {
+    text-decoration: none;
+}
+
 .sidebar ul {
     margin-top:0;
 }
@@ -79,7 +89,8 @@ header {
 .articlesets {
     display: flex;
     flex-wrap: wrap;
-    justify-content:space-around
+    justify-content:space-around;
+    gap:3em;
 }
 
 
@@ -92,8 +103,9 @@ header {
     color: var(--theme-headline-font-color);
 }
 
-.articlesets > div {
+.articleset {
     flex: 1 1 0;
+    min-width:300px;
 }
 
 
@@ -109,5 +121,9 @@ header {
 .specarticlegroup > div {
     flex: 1 1 0;
 }
-
-
+footer div.disclaimer {
+    width:50%;
+    margin: 1em auto;
+    border:1px solid;
+    border-color:var(--theme-dark-line-color)
+}
