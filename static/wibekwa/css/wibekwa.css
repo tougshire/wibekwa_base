@@ -12,9 +12,19 @@ body {
   min-height: 100vh;
 }
 
+.skip-link {
+    position: absolute;
+    top: -30px;
+  }
+
+.skip-link:focus-visible {
+    top: 5px;
+}
+
 h1.pagetitle {
     margin-top:0;
 }
+
 main {
     display:flex;
     flex-wrap: wrap;
