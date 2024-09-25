@@ -1,0 +1,19 @@
+{% load wagtailcore_tags navigation_tags %}
+{% if template_settings.mainmenu_location == side %}
+  {% include "wibekwa/includes/mainmenu.html" %}
+{% endif %}
+{% for sidebar in sidebars %}
+  {% if sidebar.location == side %}
+    {% for child in sidebar.children %}
+      <h4>{{ child.title }}</h4>
+      {{ child.body|richtext }}
+      {% if child.context.embed_url %}
+          <iframe src="{{ child.context.embed_url }}" style="{{ child.context.embed_frame_style }}"></iframe>
+      {% endif %}
+
+
+
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+

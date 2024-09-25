@@ -55,7 +55,7 @@
           {% if template_settings.show_leftbar %}
             <div id="leftsidebar" class="sidebar">
               {% block leftsidebar %}
-                {% include "wibekwa/includes/leftsidebar.html" %}
+                {% include "wibekwa/includes/sidebar.html" with side="left" %}
               {% endblock %}
             </div>
           {% endif %}
@@ -63,7 +63,15 @@
             {% block content %}
             {% endblock content %}
           </div>
-      </main>
+          {% if template_settings.show_rightbar %}
+            <div id="rightsidebar" class="sidebar">
+              {% block rightsidebar %}
+                {% include "wibekwa/includes/sidebar.html" with side="right" %}
+              {% endblock %}
+            </div>
+          {% endif %}
+
+        </main>
 
       {% block footer %}
         {% include "wibekwa/includes/footer.html" %}

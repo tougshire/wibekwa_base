@@ -34,6 +34,7 @@ main {
 main .sidebar {
     flex-basis:0;
     flex-grow: 1;
+    min-width: 300px;
 }
 
 main #content {
@@ -52,6 +53,12 @@ main #content {
     padding-right:3em;
 
 }
+#rightsidebar {
+    padding-left:3em;
+    padding-right:3em;
+
+}
+
 
 a {
   color: currentColor;
