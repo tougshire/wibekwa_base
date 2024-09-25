@@ -1,0 +1,17 @@
+{% extends "wibekwa/base.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-articlepage{% endblock %}
+
+{% block content %}
+    <h1>{{ page.title }}</h1>
+
+
+    <iframe src="{{ page.target_url}}" style="{{ page.framestyle }}"></iframe>
+
+
+    <p><a href="{{ page.get_parent.url }}">{{ page.get_parent.title }}</a></p>
+
+
+{% endblock %}
