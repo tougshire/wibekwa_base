@@ -144,6 +144,13 @@ a.brand-logo {
 .specarticlegroup > div {
     flex: 1 1 0;
 }
+
+.article {
+    padding-bottom:.5em;
+    margin-bottom:1em;
+    border-bottom: 1px dotted var(--theme-dark-line-color);
+}
+
 footer div.disclaimer {
     width:50%;
     margin: 1em auto;
