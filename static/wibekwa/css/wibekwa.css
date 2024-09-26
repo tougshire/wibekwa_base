@@ -40,6 +40,7 @@ main .sidebar {
 main #content {
     flex-basis: 0;
     flex-grow: 6;
+    min-width:300px;
 }
 
 .sidebar a {
