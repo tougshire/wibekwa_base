@@ -48,7 +48,7 @@
       <div class="tags">
         <h3>Tags</h3>
         {% for tag in visible_tags %}
-          <a href="{% slugurl 'tag' %}?tag={{ tag }}"><button type="button">{{ tag }}</button></a>
+          <a href="{{ page.get_parent.url }}?tag={{ tag }}"><button type="button">{{ tag }}</button></a>
         {% endfor %}
       </div>
     {% endif %}

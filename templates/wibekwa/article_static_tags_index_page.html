@@ -2,18 +2,12 @@
 {% load static %}
 {% load wagtailcore_tags wagtailimages_tags %}
 
-{% block top %}
-{{ block.super }}
-{% endblock %}
-{% block extra_css %}
-{{ block.super }}
-{% endblock %}
-{% block endhead %}
-{{ block.super }}
-{% endblock %}
+{% block body_class %}template-articleindexpage{% endblock %}
 
 {% block content %}
   {% if page.show_pagetitle %}<h1 class="pagetitle">{{ page.title }}</h1>{% endif %}
+  <div class="intro">{{ page.intro|richtext }}</div>
+
   <div class="articlegroups">
     {% for article_page_group in article_page_groups %}
       {% if forloop.first and first_group_is_special %}

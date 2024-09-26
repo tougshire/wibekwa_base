@@ -5,22 +5,15 @@
 {% block body_class %}template-articleindexpage{% endblock %}
 
 {% block content %}
-    {% if page.show_title %}<h1 class="pagetitle">{{ page.title }}</h1>{% endif %}
-
-    <div class="intro">{{ page.intro|richtext }}</div>
-
-    {% for article_page in article_pages %}
-      {% with article_page=article_page.specific %}
-
-        <h2><a href="{% pageurl article_page %}">{{ article_page.title }}</a></h2>
-
-        {% with article_page.main_image as main_image %}
-          {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
+  {% if page.show_title %}<h1 class="pagetitle">{{ page.title }}</h1>{% endif %}
+  <div class="intro">{{ page.intro|richtext }}</div>
+    <div class="articles">
+      {% for articlepage  in articlepages %}
+        {% with article_page=articlepage.specific %}
+          {% include "wibekwa/includes/article_indexentry.html" with show_main_image="True" %}
         {% endwith %}
-
-        <p>{{ article_page.summary }}</p>
-
-      {% endwith %}
-    {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
 
 {% endblock %}

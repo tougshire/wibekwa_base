@@ -34,13 +34,21 @@
     </div>
     {% endfor %}
 
+    {% if page.document %}
+    {% if page.show_doc_link %}
+      <div class="document">
+        <a href="{{ page.document.url }}" target="_blank">{% if page.document.title > "" %}{{ page.document.title }}{% else %}Document{% endif %}</a>({{ page.document.file_extension }})
+      </div>
+    {% endif %}
+    {% endif %}
+
     <p><a href="{{ page.get_parent.url }}">{{ page.get_parent.title }}</a></p>
 
     {% if visible_tags %}
       <div class="tags">
         <h3>Tags</h3>
         {% for tag in visible_tags %}
-          <a href="{% slugurl 'tag' %}?tag={{ tag }}"><button type="button">{{ tag }}</button></a>
+          <a href="{{ page.get_parent.url }}?tag={{ tag }}"><button type="button">{{ tag }}</button></a>
         {% endfor %}
       </div>
     {% endif %}
