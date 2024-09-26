@@ -1,6 +1,6 @@
 {% load wagtailcore_tags navigation_tags wagtailuserbar %}
 
-<header>
+<header style="{{ template_settings.header_style }}">
   <a href="#main" class="skip-link">Skip to content</a>
   {% include 'wibekwa/includes/headerbanner.html' %}
     {# Add wagtailuserbar: #}
