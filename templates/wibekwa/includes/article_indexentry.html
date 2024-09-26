@@ -6,6 +6,6 @@
     {% image article_page.main_image width-800 as main_image %}
       <div class="articleimage"><img src="{{ main_image.url }}" width="80%"></div>
     {% endif %}
-  <div class="articlemeta">Revised: {{ page.latest_revision_created_at }}</div>
+  <div class="articlemeta">Revised: {{ article_page.latest_revision_created_at }}</div>
   <div class="articlesummary">{{ article_page.summary }}</div>
 </div>
