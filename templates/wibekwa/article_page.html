@@ -22,13 +22,9 @@
       {% endif %}
     {% endwith %}
 
-    {% if page.body_sf %}
-      {% include_block page.body_sf %}
-      {% if embed_url %}
-        <iframe src="{{ embed_url }}" style="{{ embed_frame_style }}"></iframe>
-      {% endif %}
-    {% else %}
-      {{ page.body | richtext }}
+    {% include_block page.body_sf %}
+    {% if embed_url %}
+      <iframe src="{{ embed_url }}" style="{{ embed_frame_style }}"></iframe>
     {% endif %}
 
     {% for item in page.gallery_images.all %}
@@ -39,14 +35,12 @@
     {% endfor %}
 
     {% if page.document %}
-    {% if page.show_doc_link %}
-      <div class="document">
-        <a href="{{ page.document.url }}" target="_blank">{% if page.document.title > "" %}{{ page.document.title }}{% else %}Document{% endif %}</a>({{ page.document.file_extension }})
-      </div>
+      {% if page.show_doc_link %}
+        <div class="document">
+          <a href="{{ page.document.url }}" target="_blank">{% if page.document.title > "" %}{{ page.document.title }}{% else %}Document{% endif %}</a>({{ page.document.file_extension }})
+        </div>
+      {% endif %}
     {% endif %}
-    {% endif %}
-
-    <p><a href="{{ page.get_parent.url }}">{{ page.get_parent.title }}</a></p>
 
     {% if visible_tags %}
       <div class="tags">

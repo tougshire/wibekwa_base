@@ -22,7 +22,7 @@
       {% endif %}
     {% endwith %}
 
-    {{ page.body|richtext }}
+    {% include_block page.body %}
     {% if embed_url %}
       <iframe src="{{ embed_url }}" style="{{ embed_frame_style }}"></iframe>
     {% endif %}
