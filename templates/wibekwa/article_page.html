@@ -22,9 +22,13 @@
       {% endif %}
     {% endwith %}
 
-    {{ page.body|richtext }}
-    {% if embed_url %}
-      <iframe src="{{ embed_url }}" style="{{ embed_frame_style }}"></iframe>
+    {% if page.body_sf %}
+      {% include_block page.body_sf %}
+      {% if embed_url %}
+        <iframe src="{{ embed_url }}" style="{{ embed_frame_style }}"></iframe>
+      {% endif %}
+    {% else %}
+      {{ page.body | richtext }}
     {% endif %}
 
     {% for item in page.gallery_images.all %}
