@@ -1,5 +1,6 @@
 {% load static wagtailcore_tags template_settings %}
 <!DOCTYPE html>
+{% if page %}
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -84,3 +85,4 @@
         {% endblock %}
     </body>
 </html>
+{% endif %}
