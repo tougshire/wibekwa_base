@@ -90,7 +90,8 @@ a.brand-logo {
     list-style-type: none;
     text-decoration: none;
     font-weight:600;
-    font-size:1.4em;
+    font-size:1.2em;
+    line-height: 2em;
     color: var(--theme-main-font-color);
 }
 
