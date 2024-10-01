@@ -10,7 +10,7 @@
 
   <div class="articlegroups">
     {% for article_page_group in article_page_groups %}
-      {% if forloop.first and first_group_is_special %}
+      {% if forloop.first and page.apply_special_formatting %}
         <div class="specarticlegroup">
       {% else %}
         <div class="articlegroup">
@@ -19,7 +19,7 @@
       <div class="articlesets">
         {% for article_page_set in article_page_group.article_page_sets %}
           <div class="articleset">
-            {% if show_tag_titles %}<h2>{{ article_page_set.title }}</h2>{% endif %}
+            {% if page.show_tag_titles %}<h2>{{ article_page_set.title }}</h2>{% endif %}
             <div class="articles">
               {% for article_page in article_page_set.article_pages %}
                 {% include "wibekwa/includes/article_indexentry.html" with show_main_image="True" %}

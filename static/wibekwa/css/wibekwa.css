@@ -152,6 +152,12 @@ a.brand-logo {
     border-bottom: 1px dotted var(--theme-dark-line-color);
 }
 
+.articleimage {
+    width:100%;
+    text-align:center;
+}
+
+
 footer div.disclaimer {
     width:50%;
     margin: 1em auto;
