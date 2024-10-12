@@ -95,6 +95,15 @@ a.brand-logo {
     color: var(--theme-main-font-color);
 }
 
+.sidebar  ul  {
+    padding-inline-start: 1em;
+    font-weight: bold;
+}
+
+.sidebar  ul  ul {
+    font-weight: initial;
+}
+
 .site-description {
     font-family:"Roboto", sans-serif;
     font-weight: 600;
