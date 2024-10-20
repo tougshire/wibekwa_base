@@ -1,0 +1,10 @@
+{% load wagtailimages_tags %}
+
+<figure>
+  {% if self.link %}<a href="{{ self.link }}">{% endif %}
+    <img src="{{ self.url }}" style="max-width:90%;"/>
+    {% if self.link %}</a>{% endif %}
+    {% if self.caption or self.attribution %}
+    <figcaption>{{ self.caption }} - {{ self.attribution }}</figcaption>
+    {% endif %}
+</figure>
