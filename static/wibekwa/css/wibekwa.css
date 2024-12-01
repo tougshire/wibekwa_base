@@ -173,3 +173,18 @@ footer div.disclaimer {
     border:1px solid;
     border-color:var(--theme-dark-line-color)
 }
+
+form li {
+    display:flex;
+    width:100%;
+}
+form li label {
+    width:10%;
+}
+form li :nth-child(2){
+    width:60%;
+}
+form li .help_text {
+    display:block;
+    width:28%;
+}
