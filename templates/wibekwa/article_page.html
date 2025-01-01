@@ -22,18 +22,32 @@
       {% endif %}
     {% endwith %}
 
+    {% if page.show_main_image %}
+      {% image page.main_image.image width-800 as main_image %}
+        <div class="articleimage">
+          <img src="{{ main_image.url }}" width="80%" alt="{{ page.main_image.image }}">
+        </div>
+    {% endif %}
+
     {% include_block page.body_sf %}
+
     {% if embed_url %}
       <iframe src="{{ embed_url }}" style="{{ embed_frame_style }}"></iframe>
     {% endif %}
 
+    {% comment %}
+     show the gallery if
+     the editor wants to show the gallery and
+     either there is more than one image or the one image is not already shown as the mmain image
+    {% endcomment  %}
     {% if page.show_gallery %}
-      {% for item in page.gallery_images.all %}
-      <div style="float: inline-start; margin: 10px">
-          {% image item.image fill-320x240 %}
-          <p>{{ item.caption }}</p>
-      </div>
-      {% endfor %}
+      {% if not page.show_main_image or page.gallery_images.count > 1 %}
+          {% for item in page.gallery_images.all %}
+            <div style="float: inline-start; margin: 10px">
+              {% image item.image fill-320x240 %}
+            </div>
+          {% endfor %}
+      {% endif %}
     {% endif %}
 
     {% if page.document %}

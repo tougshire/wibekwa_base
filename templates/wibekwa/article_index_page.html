@@ -10,7 +10,7 @@
     <div class="articles">
       {% for articlepage  in articlepages %}
         {% with article_page=articlepage.specific %}
-          {% include "wibekwa/includes/article_indexentry.html" with show_main_image="True" %}
+          {% include "wibekwa/includes/article_indexentry.html" %}
         {% endwith %}
       {% endfor %}
     </div>

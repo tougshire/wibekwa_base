@@ -22,7 +22,7 @@
             {% if page.show_tag_titles %}<h2>{{ article_page_set.title }}</h2>{% endif %}
             <div class="articles">
               {% for article_page in article_page_set.article_pages %}
-                {% include "wibekwa/includes/article_indexentry.html" with show_main_image="True" %}
+                {% include "wibekwa/includes/article_indexentry.html" %}
               {% endfor %}
             </div>
           </div>

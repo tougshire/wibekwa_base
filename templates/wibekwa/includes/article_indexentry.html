@@ -2,11 +2,11 @@
 
 <div class="article">
   <div class="articletitle"><a href="{% pageurl article_page %}">{{ article_page.title }}</a></div>
-  {% if show_main_image  %}
-    {% image article_page.main_image width-800 as main_image %}
-    <div class="articleimage">
-      <a href="{% pageurl article_page %}"><img src="{{ main_image.url }}" width="80%"></a>
-    </div>
+    {% if article_page.show_main_image  %}
+      {% image article_page.main_image.image width-800 as main_image %} <!-- {{ main_image.image.alttext }} -->
+      <div class="articleimage">
+        <a href="{% pageurl article_page %}"><img src="{{ main_image.url }}" width="80%" alt="3{{ article_page.main_image.image }}"></a>
+      </div>
     {% endif %}
 
     <div class="articlesummary">
