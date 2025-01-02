@@ -25,7 +25,7 @@
     {% if page.show_main_image %}
       {% image page.main_image.image width-800 as main_image %}
         <div class="articleimage">
-          <img src="{{ main_image.url }}" width="80%" alt="{{ page.main_image.image }}">
+          <img src="{{ main_image.url }}" width="80%" alt="{% if page.main_image.alt_text %}{{ page.main_image.alt_text }}{% else %}{{ main_image.image.title }}{% endif %}"></a>
         </div>
     {% endif %}
 

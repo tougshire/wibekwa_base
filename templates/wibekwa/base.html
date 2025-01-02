@@ -1,4 +1,5 @@
 {% load static wagtailcore_tags template_settings %}
+
 <!DOCTYPE html>
 {% if page %}
 <html lang="en">
@@ -18,6 +19,7 @@
         {% endif %}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+        <meta property="og:type" content="website" />
         <meta property="og:title" content="{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}{% wagtail_site as current_site %}{% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}" />
         <meta property="og:url" content="{{ request.build_absolute_uri }}" />
         <meta property="og:description" content="{{ page.summary }}" />
