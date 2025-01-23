@@ -22,6 +22,10 @@
       {% endif %}
     {% endwith %}
 
+    {% if page.body_md > "" %}
+        {{ page.body_md|markdown}}
+    {% endif %}
+
     {% include_block page.body_sf %}
 
     {% for item in page.gallery_images.all %}

@@ -1,6 +1,7 @@
 {% extends "wibekwa/base.html" %}
 {% load static %}
 {% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailmarkdown %}
 
 {% block body_class %}template-articlepage{% endblock %}
 
@@ -27,6 +28,10 @@
         <div class="articleimage">
           <img src="{{ main_image.url }}" width="80%" alt="{% if page.main_image.alt_text %}{{ page.main_image.alt_text }}{% else %}{{ main_image.image.title }}{% endif %}"></a>
         </div>
+    {% endif %}
+
+    {% if page.body_md > "" %}
+        {{ page.body_md|markdown }}
     {% endif %}
 
     {% include_block page.body_sf %}
