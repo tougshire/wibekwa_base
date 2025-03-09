@@ -22,11 +22,11 @@
       {% endif %}
     {% endwith %}
 
+    {% include_block page.body_sf %}
+
     {% if page.body_md > "" %}
         {{ page.body_md|markdown}}
     {% endif %}
-
-    {% include_block page.body_sf %}
 
     {% for item in page.gallery_images.all %}
     <div style="float: inline-start; margin: 10px">
