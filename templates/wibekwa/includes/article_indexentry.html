@@ -12,12 +12,15 @@
 
     <div class="articlesummary">
       {% if forloop.parentloop.counter <= page.show_body_in_index %}
+
         {% if article_page.body_md > "" %}
           {{ article_page.body_md|markdown}}
         {% endif %}
+
         {% include_block article_page.body_sf %}
+
       {% else %}
-        {{ article_page.summary }}
+          {{ article_page.summary }}
       {% endif %}
     </div>
 

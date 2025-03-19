@@ -30,11 +30,11 @@
         </div>
     {% endif %}
 
-    {% include_block page.body_sf %}
-
     {% if page.body_md > "" %}
         {{ page.body_md|markdown }}
     {% endif %}
+
+    {% include_block page.body_sf %}
 
     {% if embed_url %}
       <iframe src="{{ embed_url }}" style="{{ embed_frame_style }}"></iframe>
