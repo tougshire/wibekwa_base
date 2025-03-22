@@ -11,7 +11,9 @@
     {% endif %}
 
     <div class="articlesummary">
-      {% if forloop.parentloop.counter <= page.show_body_in_index %}
+
+      {% if forloop.parentloop.parentloop.counter <= page.show_body_in_index %}
+
 
         {% if article_page.body_md > "" %}
           {{ article_page.body_md|markdown}}
